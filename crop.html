@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Crop Prediction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap">
+<link rel="stylesheet" type="text/css" href="C:\Users\kanga\OneDrive\Desktop\Minor Project\frontend\css\style5.css">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="C:\Users\kanga\OneDrive\Desktop\Minor Project\frontend\js\c.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){});</script>
+<body>
+    <h2 class="one"><br/><br/>
+        <b>Find out the most suitable crop to grow in your farm
+    </b></h2><br/><br/><br/><br/>
+    <div class="two">
+        <form method="POST" action="{{ url_for('crop_prediction') }}">
+            <div class="form-group">
+              <label for="Nitrogen"><b>Nitrogen :-</b></label>
+              <input
+                type="number"
+                class="form-control"
+                id="Nitrogen"
+                name="nitrogen"
+                placeholder="Enter the value (example:50)"
+                required/>
+            </div><br/><br/>
+            <div class="form-group">
+              <label for="Phosphorous"><b>Phosphorous :-</b></label>
+              <input
+                type="number"
+                class="form-control"
+                id="Phosphorous"
+                name="phosphorous"
+                placeholder="Enter the value (example:50)"
+                required/>
+            </div><br/><br/>
+        
+            <div class="form-group">
+              <label for="Pottasium"><b>Pottasium :-</b></label>
+              <input
+                type="number"
+                class="form-control"
+                id="Pottasium"
+                name="pottasium"
+                placeholder="Enter the value (example:50)"
+                required/>
+            </div><br/><br/>
+            <div class="form-group">
+              <label for="ph"><b>PH level :-</b></label>
+              <input
+                type="number"
+                step="0.01"
+                class="form-control"
+                id="ph"
+                name="ph"
+                placeholder="Enter the value"
+                required />
+            </div><br/><br/>
+            <div class="form-group">
+              <label for="Rainfall"><b>Rainfall (in mm) :-</b></label>
+              <input
+                type="number"
+                step="0.01"
+                class="form-control"
+                id="Rainfall"
+                name="rainfall"
+                placeholder="Enter the value"
+                required/>
+            </div><br/><br/>
+            <div class="form-group">
+              <label for="State"><b>State :-</b></label>
+              <select
+                onchange="print_city('state', this.selectedIndex);"
+                id="sts"
+                name="stt"
+                class="form-control"
+                style="font-weight: bold; color: black;"
+                required></select>
+              <br /><br/>
+              <label for="City"><b>City :-</b></label>
+              <select
+                id="state"
+                class="form-control"
+                name="city"
+                style="font-weight: bold; color: black;"
+                required></select><br/><br/>
+           
+            <script type="text/javascript" >
+                print_state("sts");
+              </script>
+        </div>
+      
+        <div class="center">
+            <button 
+            type="submit"
+            class="btn">
+            <b>Predict</b>
+          </button>
+        </div>
+        </form>
+        </div>
+    
+</body>
+</html>
